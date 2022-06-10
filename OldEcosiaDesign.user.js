@@ -1,13 +1,12 @@
 // ==UserScript==
 // @name         Old Ecosia design
-// @version      0.1
+// @version      0.2
 // @description  Restores the Ecosia design prior to 09-06-2022
 // @author       Kaassoufflé
 // @match        https://www.ecosia.org/*
 // @grant        GM_addStyle
 // @run-at       document-start
 // @require      https://cdn.jsdelivr.net/npm/@violentmonkey/dom@1
-// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // ==/UserScript==
 
 GM_addStyle ( `

@@ -3,10 +3,12 @@
 // @version      1.1
 // @description  Restores the Ecosia design prior to 09-06-2022
 // @author       Kaassoufflé
+// @namespace    net.kaassouffle.OldEcosiaTheme
 // @match        https://www.ecosia.org/*
 // @grant        GM_addStyle
 // @run-at       document-start
 // @require      https://cdn.jsdelivr.net/npm/@violentmonkey/dom@1
+// @license      GNU GPLv3
 // ==/UserScript==
 
 GM_addStyle ( `

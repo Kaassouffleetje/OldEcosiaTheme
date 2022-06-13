@@ -1,14 +1,12 @@
 // ==UserScript==
 // @name         Old Ecosia design
-// @version      1.1
+// @version      1.2
 // @description  Restores the Ecosia design prior to 09-06-2022
 // @author       Kaassoufflé
-// @namespace    net.kaassouffle.OldEcosiaTheme
 // @match        https://www.ecosia.org/*
 // @grant        GM_addStyle
 // @run-at       document-start
 // @require      https://cdn.jsdelivr.net/npm/@violentmonkey/dom@1
-// @license      GNU GPLv3
 // ==/UserScript==
 
 GM_addStyle ( `
@@ -104,10 +102,15 @@ GM_addStyle ( `
     }
 
 ` );
-
-var faviconLink = document.querySelector('link[rel="shortcut icon"]');
-faviconLink.href = 'https://cdn.ecosia.org/assets/images/ico/favicon.ico';
-
+function changeFavicon() {
+    try{
+        var faviconLink = document.querySelector('link[rel="shortcut icon"]');
+        faviconLink.href = 'https://cdn.ecosia.org/assets/images/ico/favicon.ico';
+    } catch(e) {
+        setTimeout(function () {changeFavicon()}, 1)
+    }
+}
+changeFavicon();
 
 // Change logo
     // Check if we're on the homepage
@@ -153,7 +156,7 @@ function tryCatchTree() {
 }
 tryCatchTree();
 
-// Footer. Only sometimes the html element isn't available right away
+// Footer. Only sometimes isn't available right away
 function tryCatchFooter() {
     try{
         // For some reason, deleting the footer causes the tree counter to dissapear. So the script hides the footer instead

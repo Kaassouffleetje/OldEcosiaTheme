@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Old Ecosia design
-// @version      1.2
+// @version      1.3
 // @description  Restores the Ecosia design prior to 09-06-2022
 // @author       Kaassoufflé
 // @match        https://www.ecosia.org/*
@@ -9,6 +9,8 @@
 // @require      https://cdn.jsdelivr.net/npm/@violentmonkey/dom@1
 // ==/UserScript==
 
+function style() {
+    try{
 GM_addStyle ( `
     /* Change font of all elements */
     :not(.tree-counter__number) {
@@ -102,12 +104,18 @@ GM_addStyle ( `
     }
 
 ` );
+    } catch(e) {
+        setTimeout(function () {style()}, 10)
+    }
+}
+style();
+
 function changeFavicon() {
     try{
         var faviconLink = document.querySelector('link[rel="shortcut icon"]');
-        faviconLink.href = 'https://cdn.ecosia.org/assets/images/ico/favicon.ico';
+        faviconLink.href = 'https://raw.githubusercontent.com/Kaassouffleetje/OldEcosiaTheme/main/favicon.ico';
     } catch(e) {
-        setTimeout(function () {changeFavicon()}, 1)
+        setTimeout(function () {changeFavicon()}, 10)
     }
 }
 changeFavicon();

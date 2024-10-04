@@ -2,7 +2,7 @@
 
 Userscript that reverts the new Ecosia design
 
-Update: the script now works reliably and has most of the elements of the old design. If you're missing anything, please let me know! (in "issues" or [DM me on Reddit](https://www.reddit.com/user/weert-gilders "DM me on Reddit"))
+Update: the script now works reliably and has most of the elements of the old design. If you're missing anything, please let me know by opening an issue!
 
 
 Works 100% on the search page, the home page only has minor changes (font, button design, color scheme)
